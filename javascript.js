@@ -379,6 +379,7 @@ form.addEventListener("submit", function (event) {
 
   if (typeof window.plausible === "function") {
   window.plausible("Check Completed");
+  
 }
 
 
