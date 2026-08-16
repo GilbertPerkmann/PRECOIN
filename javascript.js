@@ -1,6 +1,23 @@
 const form = document.getElementById("precoinForm");
 const successBox = document.getElementById("formSuccess");
 
+// =========================================================
+// PLAUSIBLE ANALYTICS — PRECOIN FUNNEL
+// =========================================================
+
+const decisionLinks =
+  document.querySelectorAll('a[href="#decision-check"]');
+
+decisionLinks.forEach(function (link) {
+  link.addEventListener("click", function () {
+
+    if (typeof window.plausible === "function") {
+      window.plausible("Check Started");
+    }
+
+  });
+});
+
 
 // =========================================================
 // PRECOIN BETA — CLEAN CORE VERSION
@@ -359,6 +376,10 @@ form.addEventListener("submit", function (event) {
     "PRECOIN decision submitted:",
     decision
   );
+
+  if (typeof window.plausible === "function") {
+  window.plausible("Check Completed");
+}
 
 
   // =========================================================
