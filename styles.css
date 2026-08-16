@@ -1530,3 +1530,28 @@ textarea:invalid:not(:placeholder-shown) {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+
+  z-index: 1000;
+
+  padding: 10px 14px;
+
+  background: var(--accent);
+  color: #151515;
+
+  border-radius: 8px;
+
+  font-weight: 800;
+
+  transform: translateY(-150%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
