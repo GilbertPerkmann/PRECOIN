@@ -1,19 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <!-- =========================================================
-       1. TECHNICAL SEO BASICS
-       =========================================================
-
-       charset:
-       Muss früh im <head> stehen, damit Browser die Zeichen
-       korrekt interpretieren.
-
-       viewport:
-       Wichtig für mobile Darstellung. Google verwendet
-       Mobile-First-Indexing.
-  ========================================================== -->
+       PRECOIN
+       Google Ads Validation Landing Page
+       ========================================================= -->
 
   <meta charset="UTF-8" />
 
@@ -24,68 +17,32 @@
 
 
   <!-- =========================================================
-       2. SEO TITLE
+       SEO TITLE
 
-       WICHTIG:
-       Der alte Titel:
-       "PRECOIN — Check your crypto decision before you buy"
+       Primary intent:
+       Bitcoin Decision Checklist
 
-       beschreibt das Produkt, greift aber die tatsächliche
-       Suchintention nur schwach auf.
-
-       Wir stellen jetzt die reale Frage an den Anfang:
-
-       "Should I Buy Bitcoin?"
-
-       Das ist gleichzeitig:
-       - Suchintention
-       - Nutzerproblem
-       - Inhalt der Seite
-
-       PRECOIN bleibt als Brand am Ende.
+       Secondary intent:
+       checking a Bitcoin decision before buying
   ========================================================== -->
 
   <title>
-    Should I Buy Bitcoin? Check Your Decision Before You Invest | PRECOIN
+    Bitcoin Decision Checklist — Check Before You Buy | PRECOIN
   </title>
 
 
   <!-- =========================================================
-       3. META DESCRIPTION
-
-       Keine Keyword-Liste.
-       Eine klare Beschreibung dessen, was der Nutzer bekommt.
-
-       Google kann diese Description verwenden, muss aber nicht.
-       Häufig erzeugt Google das Snippet aus dem sichtbaren
-       Seiteninhalt.
+       META DESCRIPTION
   ========================================================== -->
 
   <meta
     name="description"
-    content="Thinking about buying Bitcoin? PRECOIN helps you check your position size, risk tolerance, time horizon, reasons for buying and exit plan before you invest."
+    content="Use the PRECOIN Bitcoin Decision Checklist to review your position size, portfolio allocation, time horizon, buying reason and exit rules before you invest."
   />
 
 
   <!-- =========================================================
-       4. ROBOTS
-
-       index:
-       Seite darf indexiert werden.
-
-       follow:
-       Links dürfen gecrawlt werden.
-
-       max-image-preview:large:
-       Erlaubt Google große Bildvorschauen, falls wir später
-       relevante Bilder hinzufügen.
-
-       max-snippet:-1:
-       Google darf selbst die optimale Snippet-Länge bestimmen.
-
-       max-video-preview:-1:
-       Falls später Videos eingebunden werden, darf Google
-       eine vollständige Vorschau verwenden.
+       ROBOTS
   ========================================================== -->
 
   <meta
@@ -95,14 +52,7 @@
 
 
   <!-- =========================================================
-       5. CANONICAL URL
-
-       Sehr wichtig bei GitHub Pages, weil dieselbe Seite
-       theoretisch über verschiedene URL-Varianten erreichbar
-       sein kann.
-
-       Wir sagen Google:
-       DAS ist die Hauptversion dieser Seite.
+       CANONICAL
   ========================================================== -->
 
   <link
@@ -112,14 +62,7 @@
 
 
   <!-- =========================================================
-       6. LANGUAGE / REGIONAL SIGNAL
-
-       Die Seite ist aktuell komplett Englisch.
-       Deshalb geben wir Google zusätzlich eine eindeutige
-       Sprachreferenz.
-
-       Sobald wir später eine deutsche Version bauen,
-       müssen echte separate URLs verwendet werden.
+       LANGUAGE
   ========================================================== -->
 
   <link
@@ -136,16 +79,7 @@
 
 
   <!-- =========================================================
-       7. SOCIAL PREVIEW / OPEN GRAPH
-
-       Open Graph ist kein direkter Google-Rankingfaktor.
-
-       ABER:
-       Wenn jemand PRECOIN auf Reddit, X, Discord,
-       WhatsApp usw. teilt, kontrollieren diese Angaben,
-       wie der Link dargestellt wird.
-
-       Gute Darstellung -> eher Klicks / Shares / echte Nutzer.
+       OPEN GRAPH
   ========================================================== -->
 
   <meta
@@ -160,12 +94,12 @@
 
   <meta
     property="og:title"
-    content="Should I Buy Bitcoin? Check the Decision First | PRECOIN"
+    content="Bitcoin Decision Checklist — Check Before You Buy | PRECOIN"
   />
 
   <meta
     property="og:description"
-    content="Before you buy Bitcoin, check the decision itself: position size, risk tolerance, time horizon, buying reason and exit plan."
+    content="Review your position size, allocation, time horizon, buying reason and exit rules before making a Bitcoin or crypto decision."
   />
 
   <meta
@@ -175,10 +109,7 @@
 
 
   <!-- =========================================================
-       8. X / TWITTER CARD
-
-       Ebenfalls kein direkter Rankingfaktor.
-       Verbessert aber die Darstellung beim Teilen.
+       X / TWITTER
   ========================================================== -->
 
   <meta
@@ -188,21 +119,17 @@
 
   <meta
     name="twitter:title"
-    content="Should I Buy Bitcoin? Check the Decision First | PRECOIN"
+    content="Bitcoin Decision Checklist | PRECOIN"
   />
 
   <meta
     name="twitter:description"
-    content="Check your Bitcoin decision before money and emotion are involved."
+    content="Review your own reasons, risk and rules before making your next Bitcoin or crypto decision."
   />
 
 
   <!-- =========================================================
-       9. THEME COLOR
-
-       Kein Rankingfaktor.
-       Verbessert die Darstellung der Website auf unterstützten
-       Browsern / mobilen Geräten.
+       THEME COLOR
   ========================================================== -->
 
   <meta
@@ -212,23 +139,21 @@
 
 
   <!-- =========================================================
-       10. CSS
+       FAVICON
 
-       Bestehende CSS-Datei bleibt erhalten.
-
-       WICHTIG:
-       Für tatsächliche Core Web Vitals müssen wir später
-       styles.css separat untersuchen:
-       - Dateigröße
-       - Fonts
-       - render-blocking CSS
-       - Layout Shifts
-       - LCP
+       Bestehende funktionierende Lösung bleibt unangetastet.
   ========================================================== -->
-  
-<link rel="icon" type="image/png" href="favicon.png?v=2">
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="favicon.png?v=2"
+  />
 
 
+  <!-- =========================================================
+       CSS
+  ========================================================== -->
 
   <link
     rel="stylesheet"
@@ -236,24 +161,8 @@
   />
 
 
-
-
-
   <!-- =========================================================
-       11. STRUCTURED DATA
-
-       Wir verwenden absichtlich KEINE erfundenen Bewertungen.
-
-       WebPage:
-       beschreibt die Seite.
-
-       WebApplication:
-       beschreibt PRECOIN als Browser-Anwendung.
-
-       Das ist semantische Zusatzinformation.
-       Structured Data garantiert KEIN besseres Ranking.
-
-       Google selbst warnt davor, Structured Data zu überschätzen.
+       STRUCTURED DATA
   ========================================================== -->
 
   <script type="application/ld+json">
@@ -264,8 +173,8 @@
         "@type": "WebPage",
         "@id": "https://gilbertperkmann.github.io/PRECOIN/#webpage",
         "url": "https://gilbertperkmann.github.io/PRECOIN/",
-        "name": "Should I Buy Bitcoin? Check Your Decision Before You Invest | PRECOIN",
-        "description": "PRECOIN is a Bitcoin and crypto decision check that helps investors examine position size, risk tolerance, time horizon, buying reasons and exit rules before investing.",
+        "name": "Bitcoin Decision Checklist — Check Before You Buy | PRECOIN",
+        "description": "PRECOIN is a Bitcoin and crypto decision checklist that helps investors review position size, portfolio allocation, time horizon, buying reasons and exit rules before investing.",
         "inLanguage": "en"
       },
       {
@@ -273,7 +182,7 @@
         "@id": "https://gilbertperkmann.github.io/PRECOIN/#application",
         "name": "PRECOIN",
         "url": "https://gilbertperkmann.github.io/PRECOIN/",
-        "description": "A pre-investment decision check for people considering Bitcoin or crypto investments.",
+        "description": "A pre-investment Bitcoin and crypto decision checklist.",
         "applicationCategory": "FinanceApplication",
         "operatingSystem": "Any",
         "browserRequirements": "Requires a modern web browser",
@@ -284,35 +193,54 @@
   </script>
 
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18393117263"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- =========================================================
+       GOOGLE ADS TAG
+  ========================================================== -->
 
-  gtag('config', 'AW-18393117263');
-</script>
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-18393117263"
+  ></script>
 
-<!-- Event snippet for Seitenaufruf conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18393117263/x964CNzB4eIcEM_kwsJE',
-      'value': 1.0,
-      'currency': 'EUR'
-  });
-</script>
+  <script>
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag(
+      "config",
+      "AW-18393117263"
+    );
+
+  </script>
+
 
   <!-- =========================================================
-       12. PRIVACY-FRIENDLY ANALYTICS
+       GOOGLE ADS PAGE-VIEW CONVERSION
+  ========================================================== -->
 
-       Bestehendes Plausible Tracking bleibt bestehen.
+  <script>
 
-       Das ist für unsere Validierung wichtig:
-       SEO alleine interessiert uns nicht.
+    gtag(
+      "event",
+      "conversion",
+      {
+        send_to: "AW-18393117263/x964CNzB4eIcEM_kwsJE",
+        value: 1.0,
+        currency: "EUR"
+      }
+    );
 
-       Wir wollen später messen:
-       impression -> visit -> form start -> completion.
+  </script>
+
+
+  <!-- =========================================================
+       PLAUSIBLE ANALYTICS
   ========================================================== -->
 
   <script
@@ -321,19 +249,29 @@
   ></script>
 
   <script>
+
     window.plausible =
       window.plausible ||
       function () {
-        (plausible.q = plausible.q || []).push(arguments);
+
+        (plausible.q = plausible.q || [])
+          .push(arguments);
+
       };
+
 
     plausible.init =
       plausible.init ||
-      function (i) {
-        plausible.o = i || {};
+      function (options) {
+
+        plausible.o =
+          options || {};
+
       };
 
+
     plausible.init();
+
   </script>
 
 </head>
@@ -341,12 +279,9 @@
 
 <body>
 
-  <!-- =========================================================
-       ACCESSIBILITY / CRAWLABLE NAVIGATION
 
-       Skip-Link hilft Tastatur- und Screenreader-Nutzern.
-       Gute semantische HTML-Struktur hilft nicht nur Google,
-       sondern auch Accessibility Tools und Browser-Agenten.
+  <!-- =========================================================
+       ACCESSIBILITY
   ========================================================== -->
 
   <a
@@ -365,10 +300,6 @@
 
     <div class="container header-inner">
 
-      <!--
-        Brand-Link verweist jetzt auf die echte Homepage-URL
-        statt nur auf #top.
-      -->
 
       <a
         href="https://gilbertperkmann.github.io/PRECOIN/"
@@ -379,18 +310,13 @@
       </a>
 
 
-      <!--
-        Aussagekräftiger interner Anchor.
-        Sowohl Nutzer als auch Suchmaschine verstehen,
-        wohin der Link führt.
-      -->
-
       <a
         href="#decision-check"
         class="header-cta"
       >
-        Check my Bitcoin decision
+        Run the decision check
       </a>
+
 
     </div>
 
@@ -398,26 +324,26 @@
 
 
   <!-- =========================================================
-       MAIN CONTENT
-
-       Nur EIN klarer Hauptinhalt.
+       MAIN
   ========================================================== -->
 
-  <main
-    id="main-content"
-  >
+  <main id="main-content">
 
 
     <!-- =========================================================
-         HERO / PRIMARY SEARCH INTENT
+         HERO
 
-         Das H1 beantwortet jetzt sehr klar:
+         Message Match:
 
-         "Should I buy Bitcoin?"
+         Search:
+         Bitcoin Decision Checklist
 
-         Das ist wesentlich näher an dem Problem,
-         nach dem wir gerade auf Reddit suchen.
-    ========================================================== -->
+         Ad:
+         Bitcoin Decision Checklist
+
+         Landing page:
+         Bitcoin Decision Checklist
+  ========================================================== -->
 
     <section
       class="hero"
@@ -426,50 +352,40 @@
 
       <div class="container hero-inner">
 
+
         <p class="eyebrow">
-          BITCOIN DECISION CHECK
+          BITCOIN DECISION CHECKLIST
         </p>
 
 
-        <!--
-          EIN eindeutiges H1.
-          Hauptsuchintention + Nutzen.
-        -->
-
         <h1 id="hero-title">
-          Should you buy Bitcoin?
-          <span>Check the decision before you invest.</span>
+          Before you buy Bitcoin,
+          <span>
+            check the decision first.
+          </span>
         </h1>
 
 
-        <!--
-          Erste 100–150 Wörter einer Seite sind wichtig,
-          weil Nutzer UND Suchmaschine sofort verstehen sollten,
-          was die Seite beantwortet.
-
-          Wir nennen hier natürliche verwandte Begriffe:
-          - Bitcoin
-          - buy
-          - investment
-          - risk
-          - position size
-          - time horizon
-          - exit plan
-
-          KEIN Keyword-Stuffing.
-        -->
-
         <p class="hero-text">
-          If you're wondering whether now is a good time to buy Bitcoin,
-          the price is only part of the decision.
-          Your position size, investment horizon, risk tolerance,
-          reason for buying and exit plan matter too.
+
+          Review your position size,
+          portfolio allocation,
+          time horizon,
+          reason for buying
+          and exit rules before making
+          your next Bitcoin or crypto decision.
+
         </p>
 
+
         <p class="hero-text">
-          PRECOIN helps you examine those questions before you put
-          money at risk — without predicting Bitcoin's price
-          or telling you what to buy.
+
+          PRECOIN does not predict Bitcoin prices
+          or tell you what to buy.
+
+          It helps you check your own decision
+          against your own rules.
+
         </p>
 
 
@@ -477,36 +393,28 @@
           href="#decision-check"
           class="primary-button"
         >
-          Check my Bitcoin decision
+          Run my decision check
         </a>
 
 
         <p class="hero-note">
+
           No price predictions.
           No trading signals.
           No “100x coins.”
           No financial advice.
+
         </p>
+
 
       </div>
 
     </section>
 
 
-
     <!-- =========================================================
-         SEARCH-INTENT ANSWER SECTION
-
-         NEU.
-
-         Jemand, der über Google nach
-         "Should I buy Bitcoin?"
-         kommt, bekommt SOFORT eine direkte Antwort.
-
-         Das ist wichtig:
-         Wir dürfen nicht 1.000 Wörter Marketing schreiben,
-         bevor wir seine eigentliche Frage behandeln.
-    ========================================================== -->
+         DIRECT SEARCH-INTENT ANSWER
+  ========================================================== -->
 
     <section
       class="scenario-section"
@@ -515,44 +423,52 @@
 
       <div class="container narrow-container">
 
+
         <p class="section-label">
           BEFORE YOU BUY BITCOIN
         </p>
+
 
         <h2 id="bitcoin-buy-question">
           “Should I buy Bitcoin now?” may be the wrong first question.
         </h2>
 
+
         <p class="large-copy">
-          Nobody can know with certainty whether Bitcoin will rise or fall
-          after you buy it. A more useful first step is to decide whether
-          the investment makes sense under rules you can define before
-          fear, greed or FOMO affect the decision.
+
+          Nobody can know with certainty
+          whether Bitcoin will rise or fall
+          after you buy it.
+
+          A more useful first step is to ask
+          whether the decision fits rules
+          you defined before fear,
+          greed or FOMO entered the picture.
+
         </p>
 
+
         <p>
-          Before buying Bitcoin, consider how much of your portfolio
-          the investment would represent, how large a temporary loss
-          you could realistically tolerate, how long you intend to hold,
-          why you are buying and what would cause you to sell,
+
+          Before buying Bitcoin,
+          consider how much of your portfolio
+          the investment would represent,
+          how long you intend to hold,
+          why you are buying
+          and what would cause you to sell,
           reduce or rebalance the position.
+
         </p>
+
 
       </div>
 
     </section>
 
 
-
     <!-- =========================================================
-         REAL-WORLD BITCOIN EXAMPLE
-
-         Der ursprüngliche Abschnitt war bereits stark.
-
-         Wir ändern nur die Formulierungen etwas,
-         damit die Suchmaschine den Zusammenhang noch klarer
-         versteht: Bitcoin purchase decision.
-    ========================================================== -->
+         REAL-WORLD EXAMPLE
+  ========================================================== -->
 
     <section
       class="scenario-section"
@@ -561,9 +477,11 @@
 
       <div class="container narrow-container">
 
+
         <p class="section-label">
           A FAMILIAR BITCOIN DECISION
         </p>
+
 
         <h2 id="example-bitcoin-decision">
           You're about to put €2,000 into Bitcoin.
@@ -571,6 +489,7 @@
 
 
         <div class="scenario-card">
+
 
           <div class="scenario-row">
 
@@ -610,6 +529,7 @@
 
           </div>
 
+
         </div>
 
 
@@ -619,20 +539,26 @@
 
 
         <p class="scenario-answer">
-          Maybe. But before buying, check whether the decision fits
-          the investment rules you made before fear, greed or FOMO
+
+          Maybe.
+
+          But before buying,
+          check whether the decision fits
+          the investment rules you made
+          before fear, greed or FOMO
           entered the picture.
+
         </p>
+
 
       </div>
 
     </section>
 
 
-
     <!-- =========================================================
          EXAMPLE DECISION CHECK
-    ========================================================== -->
+  ========================================================== -->
 
     <section
       class="report-section"
@@ -644,29 +570,42 @@
 
         <div class="section-heading">
 
+
           <p class="section-label">
             EXAMPLE BITCOIN DECISION CHECK
           </p>
 
+
           <h2 id="example-report-title">
+
             PRECOIN checks your Bitcoin decision.
             Not Bitcoin's future price.
+
           </h2>
 
+
           <p>
-            PRECOIN does not try to predict whether Bitcoin will rise,
+
+            PRECOIN does not try to predict
+            whether Bitcoin will rise,
             fall or reach a specific price target.
-            It compares your planned investment with the risk limits,
-            time horizon and rules you defined for yourself.
+
+            It compares your planned investment
+            with the portfolio limits,
+            time horizon
+            and rules you defined for yourself.
+
           </p>
+
 
         </div>
 
 
-
         <div class="report-card">
 
+
           <div class="report-top">
+
 
             <div>
 
@@ -700,19 +639,17 @@
 
             </div>
 
-          </div>
 
+          </div>
 
 
           <div class="report-items">
 
 
-            <!-- =================================================
-                 EXAMPLE 1:
-                 POSITION SIZE
-            ================================================== -->
+            <!-- POSITION SIZE -->
 
             <article class="report-item warning">
+
 
               <div
                 class="report-icon"
@@ -729,13 +666,19 @@
                 </h3>
 
                 <p>
-                  This purchase would increase your crypto allocation
-                  from <strong>18%</strong> to <strong>34%</strong>.
+
+                  This purchase would increase
+                  your crypto allocation
+                  from <strong>18%</strong>
+                  to <strong>34%</strong>.
+
                 </p>
 
                 <p>
+
                   Your predefined maximum is
                   <strong>25%</strong>.
+
                 </p>
 
                 <span class="status-tag danger-tag">
@@ -744,16 +687,14 @@
 
               </div>
 
+
             </article>
 
 
-
-            <!-- =================================================
-                 EXAMPLE 2:
-                 BUYING REASON / FOMO
-            ================================================== -->
+            <!-- BUYING REASON -->
 
             <article class="report-item warning">
+
 
               <div
                 class="report-icon"
@@ -778,8 +719,11 @@
                 </blockquote>
 
                 <p>
-                  Your investment plan does not contain short-term
-                  Bitcoin price drops as a predefined buying trigger.
+
+                  Your investment plan does not contain
+                  short-term Bitcoin price drops
+                  as a predefined buying trigger.
+
                 </p>
 
                 <span class="status-tag danger-tag">
@@ -788,16 +732,14 @@
 
               </div>
 
+
             </article>
 
 
-
-            <!-- =================================================
-                 EXAMPLE 3:
-                 TIME HORIZON
-            ================================================== -->
+            <!-- TIME HORIZON -->
 
             <article class="report-item success">
+
 
               <div
                 class="report-icon"
@@ -814,13 +756,17 @@
                 </h3>
 
                 <p>
+
                   You selected an investment horizon of
                   <strong>5+ years</strong>.
+
                 </p>
 
                 <p>
-                  This is consistent with the long-term strategy
-                  you defined.
+
+                  This is consistent with
+                  the long-term strategy you defined.
+
                 </p>
 
                 <span class="status-tag success-tag">
@@ -829,16 +775,14 @@
 
               </div>
 
+
             </article>
 
 
-
-            <!-- =================================================
-                 EXAMPLE 4:
-                 EXIT PLAN
-            ================================================== -->
+            <!-- EXIT PLAN -->
 
             <article class="report-item warning">
+
 
               <div
                 class="report-icon"
@@ -855,8 +799,12 @@
                 </h3>
 
                 <p>
-                  You have not defined what would cause you to sell,
-                  reduce or rebalance the Bitcoin position.
+
+                  You have not defined
+                  what would cause you to sell,
+                  reduce or rebalance
+                  the Bitcoin position.
+
                 </p>
 
                 <span class="status-tag danger-tag">
@@ -865,46 +813,52 @@
 
               </div>
 
+
             </article>
+
 
           </div>
 
 
-
           <div class="report-result">
+
 
             <p>
               RESULT
             </p>
 
+
             <h3>
               3 issues found before the Bitcoin purchase.
             </h3>
 
+
             <p>
-              PRECOIN is not telling you whether to buy or sell Bitcoin.
-              It is showing you where the planned decision conflicts
-              with the rules you created for yourself.
+
+              PRECOIN is not telling you
+              whether to buy or sell Bitcoin.
+
+              It is showing you where
+              the planned decision conflicts
+              with rules you created for yourself.
+
             </p>
+
 
           </div>
 
+
         </div>
+
 
       </div>
 
     </section>
 
 
-
     <!-- =========================================================
-         INVESTMENT RISK / BEHAVIOR SECTION
-
-         "Bitcoin risk", "FOMO", "panic selling", etc.
-         erscheinen natürlich im sichtbaren Text.
-
-         Wieder: keine künstliche Keyword-Wiederholung.
-    ========================================================== -->
+         BEHAVIORAL RISK
+  ========================================================== -->
 
     <section
       class="risk-section"
@@ -913,21 +867,32 @@
 
       <div class="container narrow-container">
 
+
         <p class="section-label">
           BITCOIN INVESTMENT RISK
         </p>
 
 
         <h2 id="bitcoin-risk-title">
+
           Bitcoin's price isn't your only risk.
-          <span>Your own behavior matters too.</span>
+
+          <span>
+            Your own behavior matters too.
+          </span>
+
         </h2>
 
 
         <p class="large-copy">
-          Bitcoin can move sharply in both directions.
-          During large price moves, investors can abandon the rules
+
+          Bitcoin can move sharply
+          in both directions.
+
+          During large price moves,
+          investors can abandon rules
           they created when they were calm.
+
         </p>
 
 
@@ -941,12 +906,14 @@
             </h3>
 
             <p>
-              Buying Bitcoin because the price is rising and everyone
-              else suddenly appears to be making money.
+
+              Buying Bitcoin because the price is rising
+              and everyone else suddenly appears
+              to be making money.
+
             </p>
 
           </article>
-
 
 
           <article class="behavior-card">
@@ -956,12 +923,14 @@
             </h3>
 
             <p>
-              Investing more in Bitcoin than the portfolio allocation
-              or loss limit you originally considered acceptable.
+
+              Investing more in Bitcoin
+              than the portfolio allocation
+              you originally considered acceptable.
+
             </p>
 
           </article>
-
 
 
           <article class="behavior-card">
@@ -971,12 +940,13 @@
             </h3>
 
             <p>
-              Abandoning a long-term Bitcoin plan because the market
-              suddenly falls.
+
+              Abandoning a long-term Bitcoin plan
+              because the market suddenly falls.
+
             </p>
 
           </article>
-
 
 
           <article class="behavior-card">
@@ -986,23 +956,29 @@
             </h3>
 
             <p>
-              Rewriting your investment strategy after money,
-              emotion and market movement are already involved.
+
+              Rewriting your investment strategy
+              after money,
+              emotion
+              and market movement
+              are already involved.
+
             </p>
 
           </article>
 
+
         </div>
+
 
       </div>
 
     </section>
 
 
-
     <!-- =========================================================
-         HOW PRECOIN WORKS
-    ========================================================== -->
+         HOW IT WORKS
+  ========================================================== -->
 
     <section
       class="how-section"
@@ -1014,21 +990,27 @@
 
         <div class="section-heading centered">
 
+
           <p class="section-label">
             HOW PRECOIN WORKS
           </p>
+
 
           <h2 id="how-precoin-works">
             A preflight check before you buy Bitcoin or crypto.
           </h2>
 
+
           <p>
-            PRECOIN turns an emotional investment decision into
-            a structured set of questions you can review before acting.
+
+            PRECOIN turns an emotional investment decision
+            into a structured set of questions
+            you can review before acting.
+
           </p>
 
-        </div>
 
+        </div>
 
 
         <div class="steps-grid">
@@ -1048,13 +1030,15 @@
             </h3>
 
             <p>
-              Define your maximum crypto allocation, position size,
-              investment horizon, loss tolerance and exit logic
+
+              Define your maximum crypto allocation,
+              investment horizon
+              and exit logic
               before making the trade.
+
             </p>
 
           </article>
-
 
 
           <article class="step-card">
@@ -1071,12 +1055,14 @@
             </h3>
 
             <p>
-              Enter the asset you want to buy, the amount you are
-              considering and the reason you want to invest now.
+
+              Enter the asset you want to buy,
+              the amount you are considering
+              and the reason you want to invest now.
+
             </p>
 
           </article>
-
 
 
           <article class="step-card">
@@ -1093,12 +1079,14 @@
             </h3>
 
             <p>
-              PRECOIN compares the planned investment with your
-              predefined limits and highlights potential conflicts.
+
+              PRECOIN compares the planned investment
+              with your predefined limits
+              and highlights potential conflicts.
+
             </p>
 
           </article>
-
 
 
           <article class="step-card">
@@ -1115,34 +1103,30 @@
             </h3>
 
             <p>
-              PRECOIN does not buy, sell or predict for you.
-              You remain responsible for the investment decision.
+
+              PRECOIN does not buy,
+              sell
+              or predict for you.
+
+              You remain responsible
+              for the investment decision.
+
             </p>
 
           </article>
 
+
         </div>
+
 
       </div>
 
     </section>
 
 
-
     <!-- =========================================================
-         NEW SECTION:
-         CORE QUESTIONS BEFORE BUYING BITCOIN
-
-         Das ist für SEO besonders wichtig.
-
-         Wir beantworten hier mehrere miteinander verbundene
-         Suchintentionen auf EINER wirklich nützlichen Seite.
-
-         Google sagt 2026 ausdrücklich:
-         Nicht für jede Keyword-Variation eine künstliche Seite bauen.
-
-         Deshalb bündeln wir sinnvoll verwandte Fragen hier.
-    ========================================================== -->
+         QUESTIONS BEFORE BUYING
+  ========================================================== -->
 
     <section
       class="risk-section"
@@ -1151,9 +1135,11 @@
 
       <div class="container narrow-container">
 
+
         <p class="section-label">
           BEFORE INVESTING
         </p>
+
 
         <h2 id="questions-before-buying-bitcoin">
           Questions to answer before buying Bitcoin
@@ -1167,11 +1153,19 @@
           </h3>
 
           <p>
+
             Write down the reason before you buy.
-            A long-term investment thesis is different from buying
-            because Bitcoin has suddenly risen or fallen in price.
-            If your reason changes with the market every week,
-            the decision may be driven more by emotion than by a plan.
+
+            A long-term investment thesis
+            is different from buying
+            because Bitcoin has suddenly risen
+            or fallen in price.
+
+            If your reason changes with the market
+            every week,
+            the decision may be driven more
+            by emotion than by a plan.
+
           </p>
 
         </article>
@@ -1184,10 +1178,16 @@
           </h3>
 
           <p>
-            There is no universal amount that is appropriate for everyone.
-            A useful decision starts by comparing the planned purchase
-            with your total investable portfolio and the maximum crypto
-            allocation you are willing to accept.
+
+            There is no universal amount
+            that is appropriate for everyone.
+
+            A useful decision starts
+            by comparing the planned purchase
+            with your total investable portfolio
+            and the maximum crypto allocation
+            you are willing to accept.
+
           </p>
 
         </article>
@@ -1196,14 +1196,20 @@
         <article>
 
           <h3>
-            What if Bitcoin drops 20%, 40% or 60% after I buy?
+            What if Bitcoin drops sharply after I buy?
           </h3>
 
           <p>
-            Consider the scenario before investing.
-            If a large temporary loss would force you to sell,
-            create financial stress or cause you to abandon the plan,
-            that information matters before you choose the position size.
+
+            Consider that scenario before investing.
+
+            If a large temporary decline
+            would force you to sell,
+            create financial stress
+            or cause you to abandon your plan,
+            that matters when choosing
+            the size of the position.
+
           </p>
 
         </article>
@@ -1216,10 +1222,17 @@
           </h3>
 
           <p>
+
             Your investment horizon changes the decision.
-            Someone planning to hold for months is making a different
-            decision from someone planning to hold for five or ten years.
-            Define the horizon before the market moves.
+
+            Someone planning to hold for months
+            is making a different decision
+            from someone planning to hold
+            for five or ten years.
+
+            Define the horizon
+            before the market moves.
+
           </p>
 
         </article>
@@ -1232,33 +1245,31 @@
           </h3>
 
           <p>
-            Define what would invalidate your original reasoning.
-            A price drop alone may or may not change the investment thesis.
-            The important point is to decide what evidence, risk limit
-            or portfolio condition would cause you to sell, reduce
+
+            Define what would invalidate
+            your original reasoning.
+
+            The important point is to decide
+            what evidence,
+            portfolio limit
+            or change in your original thesis
+            would cause you to sell,
+            reduce
             or rebalance.
+
           </p>
 
         </article>
+
 
       </div>
 
     </section>
 
 
-
     <!-- =========================================================
          PERSONAL DECISION DATA
-
-         Sehr interessant für PRECOIN:
-         Das ist der einzigartige Teil des Konzepts.
-
-         Google empfiehlt ausdrücklich Inhalte,
-         die NICHT nur Commodity-Information wiederholen.
-
-         Dieser Abschnitt unterscheidet PRECOIN von einem
-         normalen "Should I buy Bitcoin?" Blogartikel.
-    ========================================================== -->
+  ========================================================== -->
 
     <section
       class="data-section"
@@ -1273,38 +1284,60 @@
 
           <div class="data-copy">
 
+
             <p class="section-label">
               YOUR INVESTMENT DECISIONS BECOME DATA
             </p>
 
+
             <h2 id="decision-history-title">
-              What if your biggest investing pattern isn't in the Bitcoin chart?
+
+              What if your biggest investing pattern
+              isn't in the Bitcoin chart?
+
             </h2>
 
-            <p>
-              Over time, PRECOIN can compare the reasoning behind
-              your investment decisions with what happened afterward.
-            </p>
 
             <p>
-              Instead of learning only from Bitcoin market data,
-              you can begin learning from your own decision history:
-              when you followed your plan, when you changed it
-              and when emotion influenced the outcome.
+
+              Over time,
+              PRECOIN can compare the reasoning
+              behind your investment decisions
+              with what happened afterward.
+
             </p>
+
+
+            <p>
+
+              Instead of learning only
+              from Bitcoin market data,
+              you can begin learning
+              from your own decision history:
+
+              when you followed your plan,
+              when you changed it
+              and when emotion influenced the decision.
+
+            </p>
+
 
           </div>
 
 
-
           <div class="pattern-card">
+
 
             <p class="pattern-label">
               EXAMPLE PATTERN
             </p>
 
+
             <h3>
-              Your worst decisions tend to happen after large short-term price moves.
+
+              Your worst decisions tend to happen
+              after large short-term price moves.
+
             </h3>
 
 
@@ -1348,33 +1381,29 @@
 
 
             <p class="pattern-disclaimer">
+
               Example data for illustration only.
-              These figures are not investment results or predictions.
+
+              These figures are not investment results
+              or predictions.
+
             </p>
+
 
           </div>
 
+
         </div>
+
 
       </div>
 
     </section>
 
 
-
     <!-- =========================================================
-         FAQ / LONG-TAIL SEARCH INTENT
-
-         KEIN FAQ SCHEMA eingebaut.
-
-         Warum?
-
-         Sichtbare Fragen sind nützlich für Nutzer und Google.
-         Aber wir müssen nicht zwanghaft Rich-Result-Markup
-         hinzufügen, nur weil die Inhalte als FAQ formuliert sind.
-
-         Der sichtbare Inhalt selbst ist das Wertvolle.
-    ========================================================== -->
+         FAQ
+  ========================================================== -->
 
     <section
       class="how-section"
@@ -1386,16 +1415,18 @@
 
         <div class="section-heading">
 
+
           <p class="section-label">
             BITCOIN DECISION FAQ
           </p>
+
 
           <h2 id="bitcoin-faq-title">
             Common questions before investing in Bitcoin
           </h2>
 
-        </div>
 
+        </div>
 
 
         <article>
@@ -1405,14 +1436,22 @@
           </h3>
 
           <p>
-            Nobody can reliably know what Bitcoin's price will do next.
-            PRECOIN therefore does not try to identify the perfect entry.
-            It helps you examine whether a planned purchase fits
-            your own risk limits, position size and investment horizon.
+
+            Nobody can reliably know
+            what Bitcoin's price will do next.
+
+            PRECOIN therefore does not try
+            to identify the perfect entry.
+
+            It helps you examine
+            whether a planned purchase fits
+            your own portfolio limits,
+            investment horizon
+            and decision rules.
+
           </p>
 
         </article>
-
 
 
         <article>
@@ -1422,12 +1461,17 @@
           </h3>
 
           <p>
-            No. PRECOIN does not predict Bitcoin prices,
-            market tops, bottoms or future returns.
+
+            No.
+
+            PRECOIN does not predict Bitcoin prices,
+            market tops,
+            bottoms
+            or future returns.
+
           </p>
 
         </article>
-
 
 
         <article>
@@ -1437,13 +1481,19 @@
           </h3>
 
           <p>
-            No. PRECOIN is designed as a decision-checking tool.
-            It highlights potential conflicts between a planned action
-            and the rules you defined for yourself.
+
+            No.
+
+            PRECOIN is designed
+            as a decision-checking tool.
+
+            It highlights potential conflicts
+            between a planned action
+            and rules you defined for yourself.
+
           </p>
 
         </article>
-
 
 
         <article>
@@ -1453,14 +1503,22 @@
           </h3>
 
           <p>
-            No. Bitcoin and other crypto assets can lose substantial value.
-            PRECOIN cannot prevent losses or guarantee investment outcomes.
-            Its purpose is to make the reasoning behind a decision
+
+            No.
+
+            Bitcoin and other crypto assets
+            can lose substantial value.
+
+            PRECOIN cannot prevent losses
+            or guarantee investment outcomes.
+
+            Its purpose is to make
+            the reasoning behind a decision
             more explicit before you act.
+
           </p>
 
         </article>
-
 
 
         <article>
@@ -1470,29 +1528,30 @@
           </h3>
 
           <p>
-            No. PRECOIN does not provide financial,
-            investment or trading advice.
-            You remain responsible for your own decisions.
+
+            No.
+
+            PRECOIN does not provide
+            financial,
+            investment
+            or trading advice.
+
+            You remain responsible
+            for your own decisions.
+
           </p>
 
         </article>
+
 
       </div>
 
     </section>
 
 
-
     <!-- =========================================================
-         MAIN CONVERSION / MVP TEST
-
-         Dieser Bereich ist für unseren Pandian-Test entscheidend.
-
-         SEO bringt Besucher.
-         DAS FORMULAR testet Verhalten.
-
-         Deshalb darf SEO niemals dieses Formular begraben.
-    ========================================================== -->
+         PRIMARY VALIDATION ACTION
+  ========================================================== -->
 
     <section
       class="cta-section"
@@ -1505,22 +1564,29 @@
 
         <div class="cta-box">
 
+
           <p class="section-label">
             PRECOIN BETA
           </p>
 
 
           <h2 id="decision-check-title">
-            Check your next Bitcoin or crypto decision before you make it.
+            Run your Bitcoin or crypto decision check.
           </h2>
 
 
           <p>
-            Answer the questions below to examine the decision
-            before you invest.
-            The first decision check is free during the beta.
-          </p>
 
+            Review your planned purchase
+            against your own portfolio limits,
+            time horizon,
+            buying reason
+            and exit rules before you invest.
+
+            The first decision check
+            is free during the beta.
+
+          </p>
 
 
           <form
@@ -1529,9 +1595,7 @@
           >
 
 
-            <!-- =================================================
-                 ASSET
-            ================================================== -->
+            <!-- ASSET -->
 
             <div class="form-group">
 
@@ -1551,13 +1615,7 @@
             </div>
 
 
-
-            <!-- =================================================
-                 AMOUNT
-
-                 inputmode decimal:
-                 Gibt mobilen Browsern einen passenden Zahlenblock.
-            ================================================== -->
+            <!-- AMOUNT -->
 
             <div class="form-group">
 
@@ -1579,10 +1637,7 @@
             </div>
 
 
-
-            <!-- =================================================
-                 PORTFOLIO VALUE
-            ================================================== -->
+            <!-- PORTFOLIO VALUE -->
 
             <div class="form-group">
 
@@ -1604,10 +1659,7 @@
             </div>
 
 
-
-            <!-- =================================================
-                 CURRENT CRYPTO VALUE
-            ================================================== -->
+            <!-- CURRENT CRYPTO VALUE -->
 
             <div class="form-group">
 
@@ -1629,16 +1681,16 @@
             </div>
 
 
-
-            <!-- =================================================
-                 MAX CRYPTO ALLOCATION
-            ================================================== -->
+            <!-- MAX ALLOCATION -->
 
             <div class="form-group">
 
               <label for="maxCryptoAllocation">
-                What is the maximum percentage of your portfolio
+
+                What is the maximum percentage
+                of your portfolio
                 you want invested in crypto?
+
               </label>
 
               <input
@@ -1656,10 +1708,7 @@
             </div>
 
 
-
-            <!-- =================================================
-                 TIME HORIZON
-            ================================================== -->
+            <!-- TIME HORIZON -->
 
             <div class="form-group">
 
@@ -1702,36 +1751,7 @@
             </div>
 
 
-
-            <!-- =================================================
-                 MAX LOSS
-            ================================================== -->
-
-            <div class="form-group">
-
-              <label for="maxLoss">
-                What maximum temporary loss could you tolerate?
-              </label>
-
-              <input
-                type="number"
-                id="maxLoss"
-                name="maxLoss"
-                placeholder="e.g. 30"
-                min="1"
-                max="100"
-                step="1"
-                inputmode="numeric"
-                required
-              />
-
-            </div>
-
-
-
-            <!-- =================================================
-                 REASON FOR INVESTING
-            ================================================== -->
+            <!-- BUYING REASON -->
 
             <div class="form-group">
 
@@ -1750,10 +1770,7 @@
             </div>
 
 
-
-            <!-- =================================================
-                 EXIT RULE
-            ================================================== -->
+            <!-- EXIT RULE -->
 
             <div class="form-group">
 
@@ -1772,7 +1789,6 @@
             </div>
 
 
-
             <button
               type="submit"
               class="primary-button form-button"
@@ -1782,21 +1798,17 @@
 
 
             <p class="form-note">
+
               Beta version.
               No financial advice.
               No trading signals.
               No Bitcoin price prediction.
+
             </p>
+
 
           </form>
 
-
-
-          <!--
-            aria-live:
-            Screenreader bekommt die Erfolgsmeldung mit,
-            sobald JavaScript hidden entfernt.
-          -->
 
           <div
             id="formSuccess"
@@ -1815,7 +1827,9 @@
 
           </div>
 
+
         </div>
+
 
       </div>
 
@@ -1825,51 +1839,44 @@
   </main>
 
 
-
   <!-- =========================================================
        FOOTER
-
-       Zusätzlicher beschreibender Satz hilft Nutzern,
-       noch einmal klar zu verstehen, was PRECOIN ist.
-
-       Kein Keyword-Spam.
   ========================================================== -->
 
   <footer class="site-footer">
 
     <div class="container footer-inner">
 
+
       <strong>
         PRECOIN
       </strong>
+
 
       <p>
         Decision discipline before you buy Bitcoin or crypto.
       </p>
 
+
       <p class="footer-disclaimer">
+
         PRECOIN does not provide financial,
-        investment or trading advice.
-        Cryptocurrency investments can involve substantial risk.
+        investment
+        or trading advice.
+
+        Cryptocurrency investments
+        can involve substantial risk.
+
       </p>
+
 
     </div>
 
   </footer>
 
 
-
   <!-- =========================================================
        JAVASCRIPT
-
-       defer:
-       Browser kann HTML weiter parsen, während JS geladen wird.
-
-       Das ist besser als ein blockierendes Script.
-
-       Da dieses Script bereits am Ende des Bodys steht,
-       ist der Vorteil kleiner, aber semantisch sauber und
-       robust, falls du es später in den Head verschiebst.
   ========================================================== -->
 
   <script
@@ -1877,5 +1884,7 @@
     defer
   ></script>
 
+
 </body>
+
 </html>
