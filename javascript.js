@@ -5,6 +5,9 @@
 // PRECOIN
 // Bitcoin / Crypto Decision Check
 // Google Ads Validation Version
+//
+// VERSION:
+// maxLoss integrated
 // =========================================================
 
 
@@ -19,22 +22,15 @@ const successBox =
 // 1. PLAUSIBLE ANALYTICS — PRECOIN FUNNEL
 // =========================================================
 //
-// WICHTIG:
-//
-// "Check Started" bedeutet NICHT mehr:
-// Besucher klickt auf einen CTA.
-//
-// Es bedeutet:
-// Besucher interagiert tatsächlich erstmals
+// "Check Started":
+// Nutzer interagiert erstmals tatsächlich
 // mit dem Decision-Formular.
 //
-// Dadurch unterscheiden wir:
+// Funnel:
 //
-// Landingpage-Besucher
+// Landingpage
 // ↓
-// CTA-Klick / Scroll
-// ↓
-// ECHTER Decision-Start
+// echter Formularstart
 // ↓
 // Check Completed
 //
@@ -54,7 +50,10 @@ function trackCheckStarted() {
   checkStartedTracked = true;
 
 
-  if (typeof window.plausible === "function") {
+  if (
+    typeof window.plausible ===
+    "function"
+  ) {
 
     window.plausible(
       "Check Started"
@@ -72,20 +71,6 @@ function trackCheckStarted() {
 
 // =========================================================
 // 2. ECHTE FORMULARINTERAKTION ERKENNEN
-// =========================================================
-//
-// focusin:
-// Nutzer klickt/tappt in ein Feld.
-//
-// input:
-// Nutzer beginnt tatsächlich etwas einzugeben.
-//
-// change:
-// Wichtig insbesondere für <select>.
-//
-// Das Event wird trotzdem nur EINMAL ausgelöst,
-// weil trackCheckStarted() durch das Flag geschützt ist.
-//
 // =========================================================
 
 
@@ -123,6 +108,7 @@ form.addEventListener(
     // 4. FORMULARWERTE LESEN
     // =====================================================
 
+
     const asset =
       document
         .getElementById("asset")
@@ -141,7 +127,9 @@ form.addEventListener(
     const portfolioValue =
       Number(
         document
-          .getElementById("portfolioValue")
+          .getElementById(
+            "portfolioValue"
+          )
           .value
       );
 
@@ -149,7 +137,9 @@ form.addEventListener(
     const currentCryptoValue =
       Number(
         document
-          .getElementById("currentCryptoValue")
+          .getElementById(
+            "currentCryptoValue"
+          )
           .value
       );
 
@@ -157,27 +147,51 @@ form.addEventListener(
     const maxCryptoAllocation =
       Number(
         document
-          .getElementById("maxCryptoAllocation")
+          .getElementById(
+            "maxCryptoAllocation"
+          )
+          .value
+      );
+
+
+    // =====================================================
+    // NEU:
+    // MAXIMAL TOLERIERTER TEMPORÄRER VERLUST
+    // =====================================================
+
+
+    const maxLoss =
+      Number(
+        document
+          .getElementById(
+            "maxLoss"
+          )
           .value
       );
 
 
     const timeHorizon =
       document
-        .getElementById("timeHorizon")
+        .getElementById(
+          "timeHorizon"
+        )
         .value;
 
 
     const reason =
       document
-        .getElementById("reason")
+        .getElementById(
+          "reason"
+        )
         .value
         .trim();
 
 
     const exitRule =
       document
-        .getElementById("exitRule")
+        .getElementById(
+          "exitRule"
+        )
         .value
         .trim();
 
@@ -227,7 +241,9 @@ form.addEventListener(
 
 
     if (
-      !Number.isFinite(currentCryptoValue) ||
+      !Number.isFinite(
+        currentCryptoValue
+      ) ||
       currentCryptoValue < 0
     ) {
 
@@ -255,13 +271,36 @@ form.addEventListener(
 
 
     if (
-      !Number.isFinite(maxCryptoAllocation) ||
+      !Number.isFinite(
+        maxCryptoAllocation
+      ) ||
       maxCryptoAllocation <= 0 ||
       maxCryptoAllocation > 100
     ) {
 
       alert(
         "Your maximum crypto allocation must be between 1% and 100%."
+      );
+
+      return;
+
+    }
+
+
+    // =====================================================
+    // NEU:
+    // MAX LOSS VALIDIEREN
+    // =====================================================
+
+
+    if (
+      !Number.isFinite(maxLoss) ||
+      maxLoss < 0 ||
+      maxLoss > 100
+    ) {
+
+      alert(
+        "Your maximum temporary loss must be between 0% and 100%."
       );
 
       return;
@@ -303,7 +342,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 6. ALLOKATION BERECHNEN
+    // 6. PORTFOLIO / ALLOKATION BERECHNEN
     // =====================================================
 
 
@@ -330,7 +369,43 @@ form.addEventListener(
 
 
     // =====================================================
-    // 7. REGELVERLETZUNGEN SAMMELN
+    // 7. NEU — VERLUSTTOLERANZ BERECHNEN
+    // =====================================================
+    //
+    // Beispiel:
+    //
+    // Kauf = €2.000
+    // maxLoss = 30%
+    //
+    // → €600 Verlust auf den geplanten Kauf.
+    //
+    // Wir behaupten NICHT,
+    // dass Bitcoin tatsächlich 30% fällt.
+    //
+    // Wir zeigen nur,
+    // was die vom Nutzer selbst eingegebene
+    // Verlustgrenze in Euro bedeutet.
+    //
+    // =====================================================
+
+
+    const maxLossAmount =
+      amount *
+      (
+        maxLoss /
+        100
+      );
+
+
+    const portfolioImpactAtMaxLoss =
+      (
+        maxLossAmount /
+        portfolioAfterPurchase
+      ) * 100;
+
+
+    // =====================================================
+    // 8. REGELVERLETZUNGEN SAMMELN
     // =====================================================
 
 
@@ -452,8 +527,57 @@ form.addEventListener(
     }
 
 
+    // -----------------------------------------------------
+    // REGEL 4
+    // Verlusttoleranz
+    // -----------------------------------------------------
+    //
+    // Wichtig:
+    //
+    // PRECOIN bewertet hier NICHT,
+    // welcher Verlust bei Bitcoin normal ist.
+    //
+    // Es übersetzt lediglich
+    // die selbst gewählte Grenze
+    // in einen konkreten Eurobetrag.
+    //
+    // -----------------------------------------------------
+
+
+    if (
+      maxLoss === 0
+    ) {
+
+      issues.push({
+
+        title:
+          "No temporary loss tolerance",
+
+        text:
+          "You entered a maximum temporary loss tolerance of 0%. " +
+          "Any temporary decline in the planned position would exceed that limit."
+
+      });
+
+    } else {
+
+      passedRules.push({
+
+        title:
+          "Loss tolerance defined",
+
+        text:
+          `You entered a maximum temporary loss tolerance of ` +
+          `${maxLoss}%. On a €${formatMoney(amount)} planned purchase, ` +
+          `that equals approximately €${formatMoney(maxLossAmount)}.`
+
+      });
+
+    }
+
+
     // =====================================================
-    // 8. EINFACHE FOMO-SPRACHERKENNUNG
+    // 9. EINFACHE FOMO-SPRACHERKENNUNG
     // =====================================================
 
 
@@ -524,7 +648,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 9. RISIKOSTUFE BERECHNEN
+    // 10. RISIKOSTUFE BERECHNEN
     // =====================================================
 
 
@@ -550,7 +674,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 10. ENTSCHEIDUNG ERSTELLEN
+    // 11. ENTSCHEIDUNG ERSTELLEN
     // =====================================================
 
 
@@ -566,16 +690,33 @@ form.addEventListener(
 
       maxCryptoAllocation,
 
+      maxLoss,
+
+
+      maxLossAmount:
+        Number(
+          maxLossAmount.toFixed(2)
+        ),
+
+
+      portfolioImpactAtMaxLoss:
+        Number(
+          portfolioImpactAtMaxLoss
+            .toFixed(2)
+        ),
+
 
       currentAllocation:
         Number(
-          currentAllocation.toFixed(1)
+          currentAllocation
+            .toFixed(1)
         ),
 
 
       allocationAfterPurchase:
         Number(
-          allocationAfterPurchase.toFixed(1)
+          allocationAfterPurchase
+            .toFixed(1)
         ),
 
 
@@ -599,7 +740,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 11. LOKAL SPEICHERN
+    // 12. LOKAL SPEICHERN
     // =====================================================
 
 
@@ -616,18 +757,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 12. PLAUSIBLE — CHECK COMPLETED
-    // =====================================================
-    //
-    // Erst hier zählen wir einen abgeschlossenen Check.
-    //
-    // Die Eingaben sind zu diesem Zeitpunkt:
-    //
-    // - vorhanden
-    // - validiert
-    // - analysiert
-    // - als Decision erzeugt
-    //
+    // 13. PLAUSIBLE — CHECK COMPLETED
     // =====================================================
 
 
@@ -649,7 +779,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 13. ISSUE HTML ERSTELLEN
+    // 14. ISSUE HTML ERSTELLEN
     // =====================================================
 
 
@@ -695,7 +825,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 14. PASSED RULES HTML
+    // 15. PASSED RULES HTML
     // =====================================================
 
 
@@ -727,7 +857,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 15. FORMULAR AUSBLENDEN
+    // 16. FORMULAR AUSBLENDEN
     // =====================================================
 
 
@@ -740,7 +870,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 16. PRECOIN REPORT ZEIGEN
+    // 17. PRECOIN REPORT ZEIGEN
     // =====================================================
 
 
@@ -757,7 +887,7 @@ form.addEventListener(
 
           ${escapeHTML(asset)}
           —
-          €${amount.toLocaleString()}
+          €${formatMoney(amount)}
 
         </h3>
 
@@ -825,6 +955,43 @@ form.addEventListener(
         </div>
 
 
+        <!-- ===============================================
+             NEW:
+             LOSS TOLERANCE SCENARIO
+        ================================================ -->
+
+        <div class="generated-conclusion">
+
+          <strong>
+            Your temporary loss limit:
+            ${maxLoss}%
+          </strong>
+
+          <p>
+
+            On the planned
+            €${formatMoney(amount)}
+            purchase,
+
+            a ${maxLoss}% decline
+            equals approximately
+
+            <strong>
+              €${formatMoney(maxLossAmount)}
+            </strong>
+
+            in temporary loss.
+
+            That is approximately
+            ${portfolioImpactAtMaxLoss.toFixed(1)}%
+            of the portfolio value
+            immediately after the planned purchase.
+
+          </p>
+
+        </div>
+
+
         <h4 class="generated-heading">
           Issues
         </h4>
@@ -887,7 +1054,11 @@ form.addEventListener(
             will rise or fall.
 
             It is checking whether this planned decision
-            conflicts with the rules and reasoning you entered.
+            conflicts with the portfolio limits,
+            loss tolerance,
+            time horizon,
+            exit rules
+            and reasoning you entered.
 
           </p>
 
@@ -909,7 +1080,7 @@ form.addEventListener(
 
 
     // =====================================================
-    // 17. NEUE ENTSCHEIDUNG
+    // 18. NEUE ENTSCHEIDUNG
     // =====================================================
 
 
@@ -934,14 +1105,6 @@ form.addEventListener(
         form.hidden =
           false;
 
-
-        // -------------------------------------------------
-        // Neue Decision-Session.
-        //
-        // Erst wenn der Nutzer wieder tatsächlich
-        // mit dem Formular interagiert,
-        // wird ein neuer "Check Started" ausgelöst.
-        // -------------------------------------------------
 
         checkStartedTracked =
           false;
@@ -968,15 +1131,28 @@ form.addEventListener(
 
 
 // =========================================================
-// 18. HTML SICHER AUSGEBEN
+// 19. GELDBETRÄGE FORMATIEREN
 // =========================================================
-//
-// Nutzereingaben erscheinen später im Report.
-//
-// Sonderzeichen werden maskiert,
-// damit Nutzereingaben nicht als HTML
-// interpretiert werden.
-//
+
+
+function formatMoney(value) {
+
+  return Number(value)
+    .toLocaleString(
+      "en-US",
+      {
+
+        maximumFractionDigits:
+          2
+
+      }
+    );
+
+}
+
+
+// =========================================================
+// 20. HTML SICHER AUSGEBEN
 // =========================================================
 
 
